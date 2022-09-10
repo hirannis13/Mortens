@@ -1,15 +1,15 @@
 export default class Card {
-    constructor (serialNumber,builder) {
-        this.serialNumber = serialNumber ; 
-        this.builder = builder ;
+    constructor (listName,listType) {
+        this.listName = listName ; 
+        this.listType = listType ;
     }
 
-    getSerialNumber() {
-        return this.serialNumber ;
+    getListName() {
+        return this.listName ;
     }
 
-    getBuilder() {
-        return this.builder ;
+    getListType() {
+        return this.listType ;
     }
 
     

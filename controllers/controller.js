@@ -6,9 +6,9 @@ export default class Controller {
 
     buildTemplate(card) {
         return `<div class = 'customercard'>
-            <h2>${card.getSerialNumber()}</h2>
-            <h2>${card.getBuilder()}</h2>
-            <button type='button' id='${card.getSerialNumber()}'>Delete</button>
+            <h2>${card.getListName()}</h2>
+            <h2>${card.getListType()}</h2>
+            <button type='button' id='${card.getListName()}'>Delete</button>
             </div>`;
     }
 
@@ -23,10 +23,10 @@ export default class Controller {
     }
 
     newCard(card) {
-        const doesCardAlreadyExist = this.model.cardList.getCard(card.serialNumber);
+        const doesCardAlreadyExist = this.model.cardList.getCard(card.listName);
 
         if (doesCardAlreadyExist === null) {
-            this.model.cardList.addCard(card.serialNumber, card.builder);
+            this.model.cardList.addCard(card.listName, card.listType);
             this.view.snackbar('The list was saved');
         } else {
             this.view.snackbar('The list already exists');

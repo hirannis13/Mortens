@@ -36,8 +36,8 @@ export default class View {
 
         listDialogForm.onsubmit = function() {
             self.controller.newCard ({
-                serialNumber : document.getElementById('namefield').value,
-                builder : document.getElementById('typefield').value,
+                listName : document.getElementById('namefield').value,
+                listType : document.getElementById('typefield').value,
             })
         }
 

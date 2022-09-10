@@ -6,14 +6,14 @@ export default class Inventory {
         this.cards = [] ;
     }
 
-    addCard (serialNumber , builder ) {
-        const newCard = new Card (serialNumber , builder)
+    addCard (listName , listType ) {
+        const newCard = new Card (listName , listType)
         this.cards.push(newCard) ; 
     }
 
-    getCard (serialNumber) {
+    getCard (listName) {
         for (const card of this.cards) {
-            if (serialNumber === card.serialNumber) {
+            if (listName === card.listName) {
                 return card ; 
             }
         }
@@ -28,7 +28,7 @@ allCards() {
 }
 
 deleteCard(sn) {
-    const index=this.cards.map(card => card.serialNumber).indexOf(sn);
+    const index=this.cards.map(card => card.listName).indexOf(sn);
     this.cards.splice(index, 1);
 }
 
