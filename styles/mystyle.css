@@ -1,12 +1,18 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(196, 194, 194);
 }
 
 .tablelist {
-     border-collapse: collapse;
+    border-collapse: collapse;
     width: 100%;
 }
 
+body h1 {
+    text-align: center;
+    font-size: 3vw;
+    margin-top: 4vw;
+}
 
 
 .searchform {
@@ -56,7 +62,7 @@ label {
     width: 25%;
 }
 
-/* Source: https://www.w3schools.com/howto/howto_js_snackbar.asp */
+
 
 #snackbar {
     visibility: hidden;
@@ -100,22 +106,29 @@ label {
     to {bottom: 0; opacity: 0;}
   }
 
-
-
-
-
+  .deleteBtn{
+    border-radius: 0.5vw;
+    border: none;
+    padding: 0.7vw;
+    font-size: 1.2vw;
+    margin-top: 2vw;
+    background-color: rgba(181, 223, 227, 0.452);
+    cursor: pointer;
+  }
   .customercard {
-    background-color: rgb(62, 62, 62);
+    background-color: rgba(181, 223, 227, 0.581);
     padding: 1.5vw;
     display: flex;
     flex-direction: column;
     width: 15vw;
-    color: aliceblue;
+    color: rgb(62, 62, 62);
     border-radius: 3vw;
     justify-content: center;
     align-items: center;
     margin-top: 5vw;
     flex-basis: 25%;
+    /* box-shadow:7px 10px 10px rgb(62, 62, 62); */
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 .customercard h2 {

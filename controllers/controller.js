@@ -8,7 +8,7 @@ export default class Controller {
         return `<div class = 'customercard'>
             <h2>${card.getListName()}</h2>
             <h2>${card.getListType()}</h2>
-            <button type='button' id='${card.getListName()}'>Delete</button>
+            <button class="deleteBtn" type='button' id='${card.getListName()}'>Delete</button>
             </div>`;
     }
 
