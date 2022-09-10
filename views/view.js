@@ -2,17 +2,6 @@ import Guitar from '../utils/guitarClass.js';
 export default class View {
     constructor(controller) {
         const self = this;
-        const snSearchForm = document.getElementById('snSearchForm');
-        const snField = document.getElementById('snField');
-        const panelText = document.getElementById('panelText');
-        const closeCross = document.getElementById('closeCross');
-        const searchForm = document.getElementById('searchForm');
-        const builder = document.getElementById('builder');
-        const model = document.getElementById('model');
-        const type = document.getElementById('type');
-        const backwood = document.getElementById('backwood');
-        const topwood = document.getElementById('topwood');
-        const price = document.getElementById('price');
         const showAllGuitarsButton = document.getElementById('showAllGuitarsButton');
         const guitarDialogForm = document.getElementById('guitarDialogForm');
         const addGuitarButton = document.getElementById('addGuitarButton');
@@ -27,29 +16,14 @@ export default class View {
 
         self.controller = controller;
 
+
         showAllGuitarsButton.onclick = function () {
             self.controller.showAllGuitars();
         }
 
-        snSearchForm.onsubmit = function (e) {
-            e.preventDefault();
-            self.controller.snSearch(snField.value);
-        }
 
-        searchForm.onsubmit = function (e) {
-            e.preventDefault();
-            const optimalGuitar = new Guitar('', price.value, builder.value, model.value, type.value, backwood.value, topwood.value);
-            self.controller.search(optimalGuitar);
-            searchPanel.classList.remove('searchPanelAnim');
-        }
-
-        panelText.onclick = function () {
-            searchPanel.classList.add('searchPanelAnim');
-        }
-
-        closeCross.onclick = function () {
-            searchPanel.classList.remove('searchPanelAnim');
-        }
+        
+       
 
         addGuitarButton.onclick = function () {
             guitarDialogForm.reset ();
@@ -64,11 +38,6 @@ export default class View {
             self.controller.newGuitar ({
                 serialNumber : document.getElementById('snfield').value,
                 builder : document.getElementById('builderfield').value,
-                model : document.getElementById('modelfield').value,
-                type : document.getElementById('typefield').value,
-                backwood : document.getElementById('backwoodfield').value,
-                topwood : document.getElementById('topwoodfield').value,
-                price : (document.getElementById('pricefield').value)
             })
         }
 

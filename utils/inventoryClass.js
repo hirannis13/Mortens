@@ -6,8 +6,8 @@ export default class Inventory {
         this.guitars = [] ;
     }
 
-    addGuitar (serialNumber , price , builder , model , type , backWood , topWood) {
-        const newGuitar = new Guitar (serialNumber , price , builder , model , type , backWood , topWood)
+    addGuitar (serialNumber , builder ) {
+        const newGuitar = new Guitar (serialNumber , builder)
         this.guitars.push(newGuitar) ; 
     }
 
@@ -21,18 +21,7 @@ export default class Inventory {
         return null;
     }
 
-    search(idealGuitar) {
-        //Destructuring
-        const {serialNumber , price , builder , model , type , backWood , topWood} = idealGuitar ;
 
-        for (const guitar of this.guitars) {
-            if (guitar.price <= price && guitar.builder===builder && guitar.model===model && guitar.type===type && guitar.backWood===backWood && guitar.topWood===topWood) {
-                return guitar;
-            }
-        }
-
-        return null;
-    }
 
 allGuitars() {
     return this.guitars;
