@@ -1,4 +1,4 @@
-export default class Guitar {
+export default class Card {
     constructor (serialNumber,builder) {
         this.serialNumber = serialNumber ; 
         this.builder = builder ;

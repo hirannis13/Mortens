@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rick's guitar inventory</title>
+    <title>Rick's card inventory</title>
     <link rel="stylesheet" href="styles/mystyle.css">
 </head>
 
@@ -18,24 +18,24 @@
         
 
         <div>
-            <button type="button" class="button" id="addGuitarButton"> Add Guitar</button>
-            <button type="button" class="button" id="showAllGuitarsButton"> Show All Guitar </button>
+            <button type="button" class="button" id="addListButton"> Add new list</button>
+            <button type="button" class="button" id="showAllListsButton"> Show All lists</button>
         </div>
 
     </div>
 
 
-    <dialog id="guitarDialog">
-        <form method="dialog" id="guitarDialogForm">
+    <dialog id="listDialog">
+        <form method="dialog" id="listDialogForm">
             <fieldset>
 
                 <legend>Add new lists</legend>
 
-                <label for="snfield">List Name</label>
-                <input type="text" class="inpitField dialogField" id="snfield" placeholder="Type in the name of the listt" required>
+                <label for="namefield">List Name</label>
+                <input type="text" class="inpitField dialogField" id="namefield" placeholder="Type in the name of the listt" required>
 
-                <label for="builderfield">List Type</label>
-                <input type="text" class="inpitField dialogField" id="builderfield" placeholder="Type in the type of the list" required>
+                <label for="typefield">List Type</label>
+                <input type="text" class="inpitField dialogField" id="typefield" placeholder="Type in the type of the list" required>
 
                 
                 <br><br>
@@ -53,8 +53,8 @@
     <dialog id="confirmDialog">
         <form method="dialog" id="confirmDialogForm">
             <fieldset>
-                <legend>Delete Guitar?</legend>
-                Do you really want to delete this Guitar?
+                <legend>Delete Card?</legend>
+                Do you really want to delete this Card?
                 <br><br>
                 <div class="dialogBtnsPanel">
                     <button type="submit" class="button"> Yes </button>
@@ -65,16 +65,15 @@
     </dialog>
 
     <form>
-        <input type="hidden" id="hiddenSnField">
+        <input type="hidden" id="hiddenNameField">
     </form>
 
 
 
 
-<div class="tablelist">
-
+<section class="tablelist">
     <div  id="searchResult"></div>
-</div>
+</section>
 
 
     

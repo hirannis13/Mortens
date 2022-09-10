@@ -1,20 +1,20 @@
-import Guitar from './guitarClass.js'
+import Card from './cardClass.js'
 
 
 export default class Inventory {
     constructor() {
-        this.guitars = [] ;
+        this.cards = [] ;
     }
 
-    addGuitar (serialNumber , builder ) {
-        const newGuitar = new Guitar (serialNumber , builder)
-        this.guitars.push(newGuitar) ; 
+    addCard (serialNumber , builder ) {
+        const newCard = new Card (serialNumber , builder)
+        this.cards.push(newCard) ; 
     }
 
-    getGuitar (serialNumber) {
-        for (const guitar of this.guitars) {
-            if (serialNumber === guitar.serialNumber) {
-                return guitar ; 
+    getCard (serialNumber) {
+        for (const card of this.cards) {
+            if (serialNumber === card.serialNumber) {
+                return card ; 
             }
         }
         //The value null represents the intentional absence of an object value
@@ -23,13 +23,13 @@ export default class Inventory {
 
 
 
-allGuitars() {
-    return this.guitars;
+allCards() {
+    return this.cards;
 }
 
-deleteGuitar(sn) {
-    const index=this.guitars.map(guitar => guitar.serialNumber).indexOf(sn);
-    this.guitars.splice(index, 1);
+deleteCard(sn) {
+    const index=this.cards.map(card => card.serialNumber).indexOf(sn);
+    this.cards.splice(index, 1);
 }
 
 }

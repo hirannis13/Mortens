@@ -7,27 +7,7 @@ body {
     width: 100%;
 }
 
-.tablelist td,
-.tablelist th {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
 
-.tablelist tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.tablelist tr:hover {
-    background-color: #ddd;
-}
-
-.tablelist th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #04AA6D;
-    color: white;
-}
 
 .searchform {
    padding: 10px;
@@ -72,7 +52,7 @@ label {
     margin-bottom: 5px;;
 }
 
-#guitarDialog {
+#listDialog {
     width: 25%;
 }
 
@@ -124,7 +104,7 @@ label {
 
 
 
-  .customerrow {
+  .customercard {
     background-color: rgb(62, 62, 62);
     padding: 1.5vw;
     display: flex;
@@ -138,7 +118,7 @@ label {
     flex-basis: 25%;
 }
 
-.customerrow h2 {
+.customercard h2 {
     font-size: 2vw;
 }
 

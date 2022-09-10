@@ -4,53 +4,38 @@ export default class Controller {
         this.view = view;
     }
 
-    buildTemplate(guitar) {
-        return `<div class = 'customerrow'>
-            <h2>${guitar.getSerialNumber()}</h2>
-            <h2>${guitar.getBuilder()}</h2>
-            <div><button type='button' id='${guitar.getSerialNumber()}'>Delete</button></div>
+    buildTemplate(card) {
+        return `<div class = 'customercard'>
+            <h2>${card.getSerialNumber()}</h2>
+            <h2>${card.getBuilder()}</h2>
+            <button type='button' id='${card.getSerialNumber()}'>Delete</button>
             </div>`;
     }
 
-    snSearch(serialNumber) {
-        const guitar = this.model.guitarList.getGuitar(serialNumber);
+
+
+    showAllCards () {
         let template = '';
-        
-        if (guitar !== null) {
-            template = this.buildTemplate(guitar);
-        } else {
-            template = `<div class = 'costumerrow'> 
-                </div>`;
-        }
-
-        this.view.message(template);
-    }
-
-
-
-
-    showAllGuitars () {
-        let template = '';
-        for (const guitar of this.model.guitarList.allGuitars()) {
-            template += this.buildTemplate (guitar);
+        for (const card of this.model.cardList.allCards()) {
+            template += this.buildTemplate (card);
         }
         this.view.message(template);
     }
 
-    newGuitar(guitar) {
-        const doesGuitarAlreadyExist = this.model.guitarList.getGuitar(guitar.serialNumber);
+    newCard(card) {
+        const doesCardAlreadyExist = this.model.cardList.getCard(card.serialNumber);
 
-        if (doesGuitarAlreadyExist === null) {
-            this.model.guitarList.addGuitar(guitar.serialNumber, guitar.builder);
-            this.view.snackbar('The guitar was saved');
+        if (doesCardAlreadyExist === null) {
+            this.model.cardList.addCard(card.serialNumber, card.builder);
+            this.view.snackbar('The list was saved');
         } else {
-            this.view.snackbar('The guitar already exists');
+            this.view.snackbar('The list already exists');
         }
     }
 
-    deleteGuitar(sn) {
-        this.model.guitarList.deleteGuitar(sn);
-        this.view.snackbar('The guitar was deleted');
+    deleteCard(sn) {
+        this.model.cardList.deleteCard(sn);
+        this.view.snackbar('The list was deleted');
     }
 
 
